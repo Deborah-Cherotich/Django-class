@@ -11,6 +11,7 @@ class Teacher(models.Model):
     code = models.PositiveSmallIntegerField()
     country = models.CharField(max_length=28)
     bio = models.TextField()
+    # image = models.ImageField()
     
     def __str__(self):
         return f"{self.first_name} {self.last_name} {self.department}"
