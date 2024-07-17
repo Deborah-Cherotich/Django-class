@@ -9,10 +9,10 @@ from .views import TeacherListView
 
 urlpatterns = [
     path(
-        "students/",StudentListView.as_view(),name="student_list_view"
+        "student/",StudentListView.as_view(),name="student_list_view"
     ),
     path(
-        "classes/", RoomListView.as_view(), name="class_list_view"
+        "room/", RoomListView.as_view(), name="room_list_view"
     ),
     path(
         "periods/", ClassPeriodListView.as_view(), name="classPeriod_list_view"

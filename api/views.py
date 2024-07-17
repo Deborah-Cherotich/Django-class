@@ -9,7 +9,7 @@ from room.models import Room
 from .serializers import RoomsSerializer
 from .serializers import ClassPeriodSerializer
 from classPeriod.models import Period
-from course.models import Course
+from courses.models import Courses
 from .serializers import CoursesSerializer
 from teacher.models import Teacher
 from .serializers import TeacherSerializer
@@ -35,7 +35,7 @@ class ClassPeriodListView(APIView):
     
 class CoursesListView(APIView):
     def get(self,request):
-        Periods = Course.objects.all()
+        Periods = Courses.objects.all()
         serializer = CoursesSerializer(Periods,many=True)
         return Response(serializer.data)
     

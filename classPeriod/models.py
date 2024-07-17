@@ -1,13 +1,12 @@
 from django.db import models
-import datetime
-# Create your models here.
+from datetime import datetime
+
 class Period(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
-    classroom = models.CharField(max_length=25)
-    day_of_the_week = models.DateField(datetime.date.today)
-    course = models.CharField(max_length=25)
+    course = models.ForeignKey(Courses, on_delete=models.CASCADE, related_name='periods')
+    classroom = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='periods')
+    day_of_the_week = models.DateField()
 
- 
     def __str__(self):
-        return f"{self.course} {self.classroom} {self.start_time}"
+        return f"{self.start_time} - {self.end_time}"

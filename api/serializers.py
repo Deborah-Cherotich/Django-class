@@ -3,7 +3,7 @@ from rest_framework import serializers
 from student.models import Student
 from room.models import Room
 from classPeriod.models import Period
-from course.models import Course
+from courses.models import Courses
 from teacher.models import Teacher
 
 class StudentSerializer(serializers.ModelSerializer):
@@ -20,7 +20,7 @@ class ClassPeriodSerializer(serializers.ModelSerializer):
     fields="__all__"
     
 class CoursesSerializer(serializers.ModelSerializer):
-    model = Course
+    model = Courses
     fields = "__all__"
     
 class TeacherSerializer(serializers.ModelSerializer):
