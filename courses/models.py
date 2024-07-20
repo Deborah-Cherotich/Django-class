@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 
 class Courses(models.Model):
-    course = models.CharField(max_length=20, primary_key=True)
+    course = models.CharField(max_length=20)
     course_id = models.SmallIntegerField()
     department = models.CharField(max_length=20)
     course_description = models.TextField()

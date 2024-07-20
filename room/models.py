@@ -18,7 +18,7 @@ from django.db import models
 from django.db import models
 
 class Room(models.Model):
-    class_name = models.CharField(max_length=20, primary_key=True)
+    classroom = models.CharField(max_length=20, primary_key=True)
     class_id = models.PositiveSmallIntegerField()
     names_of_teachers = models.TextField()
     number_of_enrolled_students = models.PositiveSmallIntegerField()
