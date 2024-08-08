@@ -1,12 +1,12 @@
 from django.db import models
-from datetime import datetime
+# from datetime import datetime
 
 class Courses(models.Model):
     course = models.CharField(max_length=20)
     course_id = models.SmallIntegerField()
     department = models.CharField(max_length=20)
     course_description = models.TextField()
-    class_starting_time = models.TimeField(default="00:00:00")
+    # class_starting_time = models.TimeField(default="00:00:00")
     course_instructor = models.CharField(max_length=28)
     number_of_students = models.PositiveSmallIntegerField()
     grade_level = models.PositiveSmallIntegerField()

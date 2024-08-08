@@ -31,7 +31,15 @@ urlpatterns = [
     path(
         "teachers/", TeacherListView.as_view(), name="teachers_list_view"
     ),
-    path("student/<int:id>",StudentDetailView.as_view(), name = "Student_Detail_View")
+    path("student/<int:id>",StudentDetailView.as_view(), name = "Student_Detail_View"),
+    
+    path("room<int:id>",RoomDetailView.as_view(), name= "Room_Detail_view"
+         ),
+    path("classPeriod<int:id>", ClassPeriodDetailView.as_view(), name= "Class_Detail_view"
+         ),
+    path("teacher<int:id>", TeacherDetailView.as_view(), name= "Teacher_Detail_view"
+         ),
+    path("course<int:id>", CoursesDetailView.as_view(), name= "Courses_Details_View"),
     
 
 ]

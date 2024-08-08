@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'api',
     'classPeriod',
     'rest_framework',
-    'django_extensions',
+    
     
 ]
 
