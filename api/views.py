@@ -18,6 +18,10 @@ from .serializers import TeacherSerializer
 class StudentListView(APIView):
     def get(self, request):
         students = Student.objects.all()
+        first_name = request.query_params.get("first_name")
+        if first_name:
+            students = students.filter(first_name = first_name)
+            
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
     
