@@ -22,16 +22,14 @@ from api.serializers import MinimalTeacherSerializer
     
 class StudentListView(APIView):
     def get(self,request):
-        Students = Student.objects.all()
-        first_name = request.query_params.get("first_name")
-        if first_name:
-            Students= Students.filter(first_name=first_name)
-        country = request.query_params.get("country")
-        if country:
-           country= Students.filter(country=country)
-        serializer = StudentSerializer(country,many=True)
-        serializer = MinimalStudentSerializer(Students, many = True)
-
+        students = Student.objects.all()
+        # first_name = request.query_params.get("first_name")
+        # if first_name:
+        #     Students= Students.filter(first_name=first_name)
+        # country = request.query_params.get("country")
+        # if country:
+        #    country= Students.filter(country=country)
+        serializer = MinimalStudentSerializer(students, many = True)
         return Response(serializer.data)
     
     
@@ -284,8 +282,8 @@ class TeacherDetailView(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
         
     
-    class weekelyTimetable(APIView):
-      def get(self, request):
+class WeeklyTimetableView(APIView):
+    def get(self, request):
         class_periods = Period.objects.all()
         serializer = ClassPeriodSerializer(class_periods, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

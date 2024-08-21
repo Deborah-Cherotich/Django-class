@@ -8,7 +8,7 @@ from courses.models import Courses
 from teacher.models import Teacher
 
 
-class StudentSerializer(serializers.ModelSerializer):
+class StudentSerializer(serializers.ModelSerializer):  
     class Meta:
         model = Student
         fields = "__all__"
